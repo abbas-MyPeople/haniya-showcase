@@ -1,0 +1,75 @@
+{
+  "id": "02_filler_two_questions",
+  "note": "Filler before a tool and two questions in one breath.",
+  "returning_name": null,
+  "caller": "555-0117",
+  "turns": [
+    {
+      "agent": "Thanks for calling. What can I get for you?",
+      "lang": "en"
+    },
+    {
+      "caller": "Do you have vegetable spring rolls?"
+    },
+    {
+      "agent": "One moment, let me check.",
+      "lang": "en"
+    },
+    {
+      "tool": "menu_lookup",
+      "args": {
+        "q": "vegetable spring rolls"
+      },
+      "result": {
+        "found": true
+      }
+    },
+    {
+      "agent": "Yes we do. How many would you like, and do you want any sauce with them?",
+      "lang": "en"
+    },
+    {
+      "caller": "Two orders, and sweet chili."
+    },
+    {
+      "tool": "add_to_cart",
+      "args": {
+        "item": "vegetable spring rolls",
+        "qty": 2
+      },
+      "result": {
+        "status": "added"
+      }
+    },
+    {
+      "agent": "Two orders of vegetable spring rolls with sweet chili. Would you like to add a soup?",
+      "lang": "en"
+    },
+    {
+      "caller": "No thanks. My name is Priya."
+    },
+    {
+      "tool": "place_order",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "tool": "send_pay_link",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "agent": "Done, Priya. Pay link is on your phone. Ready in 15 minutes, pick up at the counter, we close at 9.",
+      "lang": "en"
+    }
+  ],
+  "expected": {
+    "filler_used": "true",
+    "one_question_per_turn": "false",
+    "main_failure": "two questions at once"
+  }
+}

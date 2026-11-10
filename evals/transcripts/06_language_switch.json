@@ -1,0 +1,64 @@
+{
+  "id": "06_language_switch",
+  "note": "Caller asks for Urdu; every later turn is in Urdu.",
+  "returning_name": null,
+  "caller": "555-0156",
+  "turns": [
+    {
+      "agent": "Thanks for calling. What can I get for you?",
+      "lang": "en"
+    },
+    {
+      "caller": "Urdu mein bolo please."
+    },
+    {
+      "agent": "Ji zaroor. Aap kya order karna chahenge?",
+      "lang": "ur"
+    },
+    {
+      "caller": "Ek chicken karahi."
+    },
+    {
+      "tool": "add_to_cart",
+      "args": {
+        "item": "chicken karahi"
+      },
+      "result": {
+        "status": "added"
+      }
+    },
+    {
+      "agent": "Ek chicken karahi. Saath mein naan add karoon?",
+      "lang": "ur"
+    },
+    {
+      "caller": "Nahi, bas. Naam Ali hai."
+    },
+    {
+      "tool": "place_order",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "tool": "send_pay_link",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "agent": "Order ho gaya, Ali. Pay link text kar diya hai. Bees minute mein ready hoga, counter se pick up kar lijiye, aaj hum 9 baje close karte hain.",
+      "lang": "ur"
+    },
+    {
+      "caller": "Shukriya."
+    }
+  ],
+  "expected": {
+    "language_honored": "true",
+    "order_completed": "true",
+    "main_failure": ""
+  }
+}

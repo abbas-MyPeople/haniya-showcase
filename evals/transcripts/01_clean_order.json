@@ -1,0 +1,78 @@
+{
+  "id": "01_clean_order",
+  "note": "Returning caller, one dish, add-on offered, placed, pay link, full wrap-up.",
+  "returning_name": "Sam",
+  "caller": "555-0142",
+  "turns": [
+    {
+      "tool": "begin_call",
+      "args": {},
+      "result": {
+        "returning_caller": {
+          "name": "Sam"
+        }
+      }
+    },
+    {
+      "agent": "Hi Sam, thanks for calling. What can I get started for you?",
+      "lang": "en"
+    },
+    {
+      "caller": "Hey, can I get the chicken fried rice?"
+    },
+    {
+      "tool": "add_to_cart",
+      "args": {
+        "item": "chicken fried rice"
+      },
+      "result": {
+        "status": "added"
+      }
+    },
+    {
+      "agent": "Got it, one chicken fried rice. Would you like to add a mango lassi with that?",
+      "lang": "en"
+    },
+    {
+      "caller": "No, that's it."
+    },
+    {
+      "agent": "One chicken fried rice for pickup. Shall I place it?",
+      "lang": "en"
+    },
+    {
+      "caller": "Yes please."
+    },
+    {
+      "tool": "place_order",
+      "args": {},
+      "result": {
+        "ok": true,
+        "order": "A1"
+      }
+    },
+    {
+      "tool": "send_pay_link",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "agent": "It's in. I've texted you the pay link. It'll be ready in about 20 minutes, pick it up at the front counter, and we close at 9 tonight.",
+      "lang": "en"
+    },
+    {
+      "caller": "Perfect, thanks."
+    }
+  ],
+  "expected": {
+    "filler_used": "false",
+    "one_question_per_turn": "true",
+    "order_completed": "true",
+    "pay_link_sent": "true",
+    "gave_wrapup": "true",
+    "greeted_returning_by_name": "true",
+    "main_failure": ""
+  }
+}

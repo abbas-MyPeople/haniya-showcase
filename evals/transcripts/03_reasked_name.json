@@ -1,0 +1,70 @@
+{
+  "id": "03_reasked_name",
+  "note": "Caller gave the name early; agent asked for it again.",
+  "returning_name": null,
+  "caller": "555-0188",
+  "turns": [
+    {
+      "agent": "Thanks for calling. What can I get for you?",
+      "lang": "en"
+    },
+    {
+      "caller": "Hi, this is Jordan, I'd like a beef chow mein for pickup."
+    },
+    {
+      "tool": "add_to_cart",
+      "args": {
+        "item": "beef chow mein"
+      },
+      "result": {
+        "status": "added"
+      }
+    },
+    {
+      "agent": "One beef chow mein. Want to add a side of naan?",
+      "lang": "en"
+    },
+    {
+      "caller": "Sure, one plain naan."
+    },
+    {
+      "tool": "add_to_cart",
+      "args": {
+        "item": "plain naan"
+      },
+      "result": {
+        "status": "added"
+      }
+    },
+    {
+      "agent": "Great. What's the name for the order?",
+      "lang": "en"
+    },
+    {
+      "caller": "I already told you, Jordan."
+    },
+    {
+      "tool": "place_order",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "tool": "send_pay_link",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "agent": "Sorry about that, Jordan. It's placed and the pay link is texted. Ready in 20 minutes, pick up at the counter, we close at 9.",
+      "lang": "en"
+    }
+  ],
+  "expected": {
+    "reasked_something_already_said": "true",
+    "customer_sentiment": 2,
+    "main_failure": "re-asked a given answer"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "04_info_only_hours",
+  "note": "Hours question, answered, no order. Most fields are na.",
+  "returning_name": null,
+  "caller": "555-0103",
+  "turns": [
+    {
+      "agent": "Thanks for calling. How can I help?",
+      "lang": "en"
+    },
+    {
+      "caller": "What time do you close tonight?"
+    },
+    {
+      "tool": "store_status",
+      "args": {},
+      "result": {
+        "open_now": true,
+        "closes": "21:00"
+      }
+    },
+    {
+      "agent": "We're open until 9 tonight. Anything I can get started for you?",
+      "lang": "en"
+    },
+    {
+      "caller": "Not right now, thank you."
+    }
+  ],
+  "expected": {
+    "order_completed": "na",
+    "pay_link_sent": "na",
+    "gave_wrapup": "na",
+    "dead_ended": "false",
+    "main_failure": ""
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "05_dead_end_catering",
+  "note": "Answerable catering question met with 'I'm not sure'.",
+  "returning_name": null,
+  "caller": "555-0129",
+  "turns": [
+    {
+      "agent": "Thanks for calling. What can I get for you?",
+      "lang": "en"
+    },
+    {
+      "caller": "How many people does a large tray of biryani feed?"
+    },
+    {
+      "agent": "I'm not sure about that, sorry.",
+      "lang": "en"
+    },
+    {
+      "caller": "Okay, forget it."
+    }
+  ],
+  "expected": {
+    "dead_ended": "true",
+    "main_failure": "dead-ended a question"
+  }
+}

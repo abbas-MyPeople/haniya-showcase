@@ -1,0 +1,49 @@
+{
+  "id": "07_placed_no_paylink",
+  "note": "Order placed, but no pay link and the wrap-up skips closing time.",
+  "returning_name": "Riley",
+  "caller": "555-0171",
+  "turns": [
+    {
+      "agent": "Thanks for calling. What can I get for you?",
+      "lang": "en"
+    },
+    {
+      "caller": "Two veggie samosas please."
+    },
+    {
+      "tool": "add_to_cart",
+      "args": {
+        "item": "veggie samosa",
+        "qty": 2
+      },
+      "result": {
+        "status": "added"
+      }
+    },
+    {
+      "agent": "Two veggie samosas. Would you like a drink with that?",
+      "lang": "en"
+    },
+    {
+      "caller": "No."
+    },
+    {
+      "tool": "place_order",
+      "args": {},
+      "result": {
+        "ok": true
+      }
+    },
+    {
+      "agent": "All set. Ready in 10 minutes, pick it up at the counter.",
+      "lang": "en"
+    }
+  ],
+  "expected": {
+    "greeted_returning_by_name": "false",
+    "pay_link_sent": "false",
+    "gave_wrapup": "false",
+    "main_failure": "no pay link"
+  }
+}
